@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://enemies/enemy1/enemy1_sword.png" type="Texture" id=1]
+[ext_resource path="res://enemies/enemy1/enemy1_hand.png" type="Texture" id=2]
+[ext_resource path="res://enemies/enemyHand.gd" type="Script" id=3]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": false,
+"name": "enemy1",
+"speed": 0.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": false,
+"name": "enemy1",
+"speed": 0.0
+} ]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 5.88624
+
+[node name="enemyHand" type="Node2D"]
+z_index = 1
+z_as_relative = false
+script = ExtResource( 3 )
+
+[node name="hand" type="AnimatedSprite" parent="."]
+scale = Vector2( 2, 2 )
+frames = SubResource( 2 )
+animation = "enemy1"
+offset = Vector2( 9, 0 )
+
+[node name="sword" type="Area2D" parent="hand"]
+scale = Vector2( 0.5, 0.5 )
+
+[node name="sword" type="AnimatedSprite" parent="hand/sword"]
+position = Vector2( 40.2676, -16.782 )
+rotation = -1.39626
+scale = Vector2( 2, 2 )
+z_index = -1
+frames = SubResource( 3 )
+animation = "enemy1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hand/sword"]
+position = Vector2( 43.0177, -27.0552 )
+shape = SubResource( 1 )
+[connection signal="body_entered" from="hand/sword" to="." method="_on_sword_body_entered"]

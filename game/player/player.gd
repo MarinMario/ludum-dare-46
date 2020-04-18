@@ -29,7 +29,19 @@ func _physics_process(delta):
 		$body.scale.x = -1
 	elif motion.x > 0:
 		$body.scale.x = 1
+	
+	if health <= 0: die()
+
 
 func takeDamage():
 	randomize()
-	health -= rand_range(0, 10)
+	health -= int(rand_range(0, 10))
+	print(health)
+
+
+onready var alreadyDead = false
+func die():
+	if not alreadyDead:
+		alreadyDead = true
+		$CollisionShape2D.disabled = true
+		speed = 0
