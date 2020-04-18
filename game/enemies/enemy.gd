@@ -8,6 +8,7 @@ var velocity := Vector2()
 
 export var health = 10
 export var speed = 250
+export var patrolSpeed = 50
 onready var anim = "idle"
 
 func _physics_process(delta):
@@ -18,10 +19,13 @@ func _physics_process(delta):
 	
 	if followPlayer:
 		direction = (targetPosition - self.position).normalized()
-		velocity = direction * speed
+		if targetPosition.distance_squared_to(position) <= 2000:
+			velocity = Vector2()
+			attack()
+		else: velocity = direction * speed
 	else:
 		generateRandomDirection(delta)
-		velocity = randomDir * 50
+		velocity = randomDir * patrolSpeed
 	
 	move_and_slide(velocity)
 	
@@ -67,6 +71,7 @@ func die():
 		$detectArea/CollisionShape2D.disabled = true
 		followPlayer = false
 		shouldUpdateTargetPos = false
+		patrolSpeed = 0
 
 var randomDirectionTimer = 0
 var randomDir = Vector2(0,0)
@@ -80,4 +85,6 @@ func generateRandomDirection(delta):
 	if randomDirectionTimer >= 3:
 		randomDir = newRandomDir
 		randomDirectionTimer = 0
-	
+
+func attack():
+	$AnimationPlayer.play("attack")
