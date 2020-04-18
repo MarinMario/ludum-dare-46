@@ -4,10 +4,10 @@
 [ext_resource path="res://enemies/enemy1/health_bar.png" type="Texture" id=2]
 
 [sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.545098, 0.0980392, 0.0980392, 1 )
+bg_color = Color( 0.847059, 0.568627, 0.137255, 1 )
 
 [sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.847059, 0.568627, 0.137255, 1 )
+bg_color = Color( 0, 0, 0, 1 )
 
 [node name="playerStats" type="CanvasLayer"]
 script = ExtResource( 1 )

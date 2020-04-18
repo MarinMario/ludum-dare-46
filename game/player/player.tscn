@@ -9,7 +9,7 @@
 [ext_resource path="res://player/playerHand.tscn" type="PackedScene" id=7]
 [ext_resource path="res://player/playerStats.tscn" type="PackedScene" id=8]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 6 ) ],
 "loop": false,
@@ -22,11 +22,11 @@ animations = [ {
 "speed": 20.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=3]
+[sub_resource type="CapsuleShape2D" id=2]
 radius = 11.7462
 height = 84.3793
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 resource_name = "die"
 length = 0.3
 tracks/0/type = "value"
@@ -80,14 +80,14 @@ rotation = -1.0472
 [node name="AnimatedSprite" type="AnimatedSprite" parent="body"]
 position = Vector2( -0.211288, 0 )
 scale = Vector2( 2, 2 )
-frames = SubResource( 2 )
+frames = SubResource( 1 )
 animation = "move"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/die = SubResource( 4 )
+anims/die = SubResource( 3 )
 
 [node name="playerStats" parent="." instance=ExtResource( 8 )]
 
