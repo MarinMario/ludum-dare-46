@@ -5,14 +5,14 @@ var target : Node2D
 var targetPosition : Vector2
 var direction := Vector2()
 var velocity := Vector2()
+export var maxTakenDamage := 20
 
-export var health = 10
+export var health = 50
 export var speed = 250
 export var patrolSpeed = 50
 onready var anim = "idle"
 
 func _physics_process(delta):
-	
 	if shouldUpdateTargetPos:
 		updateTargetPos(delta)
 	else: followPlayer = false
@@ -61,9 +61,9 @@ func updateTargetPos(delta):
 
 func takeDamage():
 	randomize()
-	health -= int(rand_range(0, 10))
+	health -= int(rand_range(1, maxTakenDamage))
 
-var alreadyDead = false
+onready var alreadyDead = false
 func die():
 	if not alreadyDead:
 		alreadyDead = true
@@ -72,13 +72,15 @@ func die():
 		followPlayer = false
 		shouldUpdateTargetPos = false
 		patrolSpeed = 0
+		$AnimationPlayer.play("die")
+		self.z_index = 5
 
 var randomDirectionTimer = 0
 var randomDir = Vector2(0,0)
 func generateRandomDirection(delta):
 	randomize()
-	var dir1 = round(rand_range(-1,1))
-	var dir2 = round(rand_range(-1,1))
+	var dir1 = round(rand_range(-1.4,1.4))
+	var dir2 = round(rand_range(-1.4,1.4))
 	var newRandomDir = Vector2(dir1, dir2)
 	
 	randomDirectionTimer += delta

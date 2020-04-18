@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://player/playerStats.gd" type="Script" id=1]
+[ext_resource path="res://enemies/enemy1/health_bar.png" type="Texture" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.545098, 0.0980392, 0.0980392, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.847059, 0.568627, 0.137255, 1 )
+
+[node name="playerStats" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="healthBar" type="Node2D" parent="."]
+position = Vector2( 19.507, 16.5809 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="bar" type="ProgressBar" parent="healthBar"]
+margin_right = 140.0
+margin_bottom = 30.0
+custom_styles/fg = SubResource( 1 )
+custom_styles/bg = SubResource( 2 )
+step = 1.0
+value = 50.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sprite" type="Sprite" parent="healthBar"]
+position = Vector2( 70, 16 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 2 )

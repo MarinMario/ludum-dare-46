@@ -1,9 +1,10 @@
 extends KinematicBody2D
 
-var health = 100
+export var health = 100
 
 var velocity = Vector2()
-var speed = 300
+export var speed = 300
+export var maxTakenDamage = 20
 onready var anim = "idle"
 
 func _physics_process(delta):
@@ -21,9 +22,10 @@ func _physics_process(delta):
 	move_and_slide(motion)
 	
 	$body/AnimatedSprite.play(anim)
-	if velocity != Vector2():
-		anim = "move"
-	else: anim = "idle"
+	if not alreadyDead:
+		if velocity != Vector2():
+			anim = "move"
+		else: anim = "idle"
 	
 	if motion.x < 0:
 		$body.scale.x = -1
@@ -31,11 +33,19 @@ func _physics_process(delta):
 		$body.scale.x = 1
 	
 	if health <= 0: die()
+	
+	if shouldCameraShake:
+		cameraShakeTimer += delta
+		if cameraShakeTimer >= 0.1:
+			cameraShakeTimer = 0
+			shouldCameraShake = false
+			$Camera2D.offset = Vector2()
+		else: cameraShake(10)
 
 
 func takeDamage():
 	randomize()
-	health -= int(rand_range(0, 10))
+	health -= round(rand_range(1, maxTakenDamage))
 	print(health)
 
 
@@ -44,4 +54,14 @@ func die():
 	if not alreadyDead:
 		alreadyDead = true
 		$CollisionShape2D.disabled = true
+		$AnimationPlayer.play("die")
 		speed = 0
+		self.z_index = 5
+
+onready var shouldCameraShake = false
+onready var cameraShakeTimer = 0
+func cameraShake(shakeAmount):
+	$Camera2D.offset = Vector2(
+		rand_range(-1.0, 1.0) * shakeAmount,
+		rand_range(-1.0, 1.0) * shakeAmount
+	)

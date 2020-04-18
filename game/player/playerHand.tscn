@@ -9,7 +9,6 @@ radius = 2.83412
 
 [node name="playerHand" type="Node2D"]
 z_index = 10
-z_as_relative = false
 script = ExtResource( 2 )
 
 [node name="hand" type="Sprite" parent="."]
