@@ -30,6 +30,6 @@ func _physics_process(delta):
 	elif motion.x > 0:
 		$body.scale.x = 1
 
-func take_damage():
+func takeDamage():
 	randomize()
 	health -= rand_range(0, 10)

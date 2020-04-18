@@ -5,4 +5,4 @@ func _process(delta):
 
 func _on_sword_body_entered(body):
 	if body.is_in_group("enemy"):
-		body.take_damage()
+		body.takeDamage()

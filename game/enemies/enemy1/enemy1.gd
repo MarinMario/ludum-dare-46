@@ -6,10 +6,8 @@ var targetPosition : Vector2
 var direction := Vector2()
 var velocity := Vector2()
 
-var shouldUpdateTargetPos = false
-
+export var health = 10
 export var speed = 250
-
 onready var anim = "idle"
 
 func _physics_process(delta):
@@ -32,6 +30,8 @@ func _physics_process(delta):
 		$body.scale.x = -1
 	elif velocity.x > 0:
 		$body.scale.x = 1
+	
+	if health <= 0: die()
 
 func _on_detectArea_body_entered(body):
 	if body.name == "player":
@@ -42,6 +42,7 @@ func _on_detectArea_body_exited(body):
 	if body.name == "player":
 		shouldUpdateTargetPos = false
 
+var shouldUpdateTargetPos = false
 var updateTargetTimer = 0
 func updateTargetPos(delta):
 	updateTargetTimer += delta
@@ -49,3 +50,16 @@ func updateTargetPos(delta):
 		followPlayer = true
 		targetPosition = target.position
 		updateTargetTimer = 0
+
+func takeDamage():
+	randomize()
+	health -= int(rand_range(0, 10))
+
+var alreadyDead = false
+func die():
+	if not alreadyDead:
+		alreadyDead = true
+		$CollisionShape2D.disabled = true
+		$detectArea/CollisionShape2D.disabled = true
+		followPlayer = false
+		shouldUpdateTargetPos = false
