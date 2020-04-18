@@ -19,7 +19,11 @@ func _physics_process(delta):
 	if followPlayer:
 		direction = (targetPosition - self.position).normalized()
 		velocity = direction * speed
-		move_and_slide(velocity)
+	else:
+		generateRandomDirection(delta)
+		velocity = randomDir * 50
+	
+	move_and_slide(velocity)
 	
 	$body/AnimatedSprite.play(anim)
 	if velocity != Vector2():
@@ -63,3 +67,17 @@ func die():
 		$detectArea/CollisionShape2D.disabled = true
 		followPlayer = false
 		shouldUpdateTargetPos = false
+
+var randomDirectionTimer = 0
+var randomDir = Vector2(0,0)
+func generateRandomDirection(delta):
+	randomize()
+	var dir1 = round(rand_range(-1,1))
+	var dir2 = round(rand_range(-1,1))
+	var newRandomDir = Vector2(dir1, dir2)
+	
+	randomDirectionTimer += delta
+	if randomDirectionTimer >= 3:
+		randomDir = newRandomDir
+		randomDirectionTimer = 0
+	
