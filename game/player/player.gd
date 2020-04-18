@@ -1,8 +1,10 @@
 extends KinematicBody2D
 
+var health = 100
+
 var velocity = Vector2()
 var speed = 300
-var anim = ""
+onready var anim = "idle"
 
 func _physics_process(delta):
 	velocity = Vector2()
@@ -27,3 +29,7 @@ func _physics_process(delta):
 		$body.scale.x = -1
 	elif motion.x > 0:
 		$body.scale.x = 1
+
+func take_damage():
+	randomize()
+	health -= rand_range(0, 10)
