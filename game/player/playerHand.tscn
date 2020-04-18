@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://player/okarin_hand.png" type="Texture" id=1]
+[ext_resource path="res://player/playerHand.gd" type="Script" id=2]
+[ext_resource path="res://player/swprd.png" type="Texture" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 2.83412
+
+[node name="playerHand" type="Node2D"]
+z_index = 10
+z_as_relative = false
+script = ExtResource( 2 )
+
+[node name="hand" type="Sprite" parent="."]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+offset = Vector2( 9, 0 )
+
+[node name="sword" type="Area2D" parent="hand"]
+
+[node name="sword" type="Sprite" parent="hand/sword"]
+position = Vector2( 21.7151, -8.16711 )
+rotation = -1.22173
+z_index = -1
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hand/sword"]
+position = Vector2( 23.4578, -12.7407 )
+shape = SubResource( 1 )
+[connection signal="body_entered" from="hand/sword" to="." method="_on_sword_body_entered"]

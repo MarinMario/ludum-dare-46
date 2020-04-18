@@ -18,12 +18,12 @@ func _physics_process(delta):
 	var motion = velocity.normalized() * speed
 	move_and_slide(motion)
 	
-	$AnimatedSprite.play(anim)
+	$body/AnimatedSprite.play(anim)
 	if velocity != Vector2():
 		anim = "move"
 	else: anim = "idle"
 	
 	if motion.x < 0:
-		$AnimatedSprite.scale.x = -2
+		$body.scale.x = -1
 	elif motion.x > 0:
-		$AnimatedSprite.scale.x = 2
+		$body.scale.x = 1
