@@ -13,4 +13,4 @@ position = Vector2( 185.547, 293.597 )
 position = Vector2( 1165.73, 312.79 )
 
 [node name="dialog_spawner_area" parent="." instance=ExtResource( 3 )]
-position = Vector2( 670.46, 270.304 )
+position = Vector2( 380.219, 272.696 )
