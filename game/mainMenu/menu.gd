@@ -18,6 +18,7 @@ func _on_Continue_pressed():
 func _on_NewGame_pressed():
 	get_tree().change_scene("res://rooms/okarinRoom/okarinRoom.tscn")
 	get_tree().paused = false
+	sounds.get_node("gos").stop()
 	sounds.get_node("pop").play()
 	sounds.get_node("op").play()
 

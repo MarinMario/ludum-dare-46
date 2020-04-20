@@ -15,9 +15,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Ludum Dare 46"
+config/name="Sword of Steiner"
 run/main_scene="res://mainMenu/mainMenu.tscn"
-boot_splash/image="res://player/swprd.png"
 boot_splash/fullsize=false
 boot_splash/use_filter=false
 boot_splash/bg_color=Color( 0, 0, 0, 1 )

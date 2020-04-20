@@ -30,7 +30,7 @@ func _process(delta):
 			sounds.get_node("door").play()
 		playerInside = false
 	
-	if lines.size()> 0 and linesRead:
+	if lines.size()> 0 and linesRead and !needsKey and nextRoom != "":
 		get_tree().change_scene(nextRoom)
 		sounds.get_node("door").play()
 
