@@ -8,3 +8,4 @@ func _on_Pause_pressed():
 	paused = not paused
 	$pauseMenu.visible = paused
 	get_tree().paused = paused
+	sounds.get_node("pop").play()

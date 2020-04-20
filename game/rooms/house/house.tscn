@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://rooms/colorTileset.tscn" type="PackedScene" id=1]
 [ext_resource path="res://rooms/door.tscn" type="PackedScene" id=2]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://actionKeyArea/actionKeyArea.tscn" type="PackedScene" id=4]
+[ext_resource path="res://rooms/house/house.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1198.08, 20.5239 )
@@ -12,6 +13,7 @@ extents = Vector2( 1198.08, 20.5239 )
 extents = Vector2( 47.7992, 90.4642 )
 
 [node name="house" type="Node2D"]
+script = ExtResource( 5 )
 
 [node name="colorTileset" parent="." instance=ExtResource( 1 )]
 modulate = Color( 0.329412, 0.329412, 0.329412, 1 )

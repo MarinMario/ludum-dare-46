@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://sounds/hit.wav" type="AudioStream" id=1]
+[ext_resource path="res://sounds/door.wav" type="AudioStream" id=2]
+[ext_resource path="res://sounds/pop.wav" type="AudioStream" id=3]
+[ext_resource path="res://sounds/sgop.ogg" type="AudioStream" id=4]
+[ext_resource path="res://sounds/gateOfSteiner.ogg" type="AudioStream" id=5]
+[ext_resource path="res://sounds/wosh.wav" type="AudioStream" id=6]
+[ext_resource path="res://sounds/car.wav" type="AudioStream" id=7]
+
+[node name="sounds" type="Node2D"]
+pause_mode = 2
+
+[node name="hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+bus = "sounds"
+
+[node name="door" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+bus = "sounds"
+
+[node name="pop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+bus = "sounds"
+
+[node name="op" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+bus = "music"
+
+[node name="gos" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+bus = "music"
+
+[node name="wosh" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+bus = "sounds"
+
+[node name="car" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+bus = "sounds"

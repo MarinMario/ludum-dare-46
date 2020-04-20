@@ -23,7 +23,9 @@ tracks/0/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 0.8, 0.8 ), Vector2( 1, 1 ) ]
 }
 
-[node name="actionKeyArea" type="Area2D"]
+[node name="actionKeyArea" type="Area2D" groups=[
+"actionKeyArea",
+]]
 script = ExtResource( 1 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

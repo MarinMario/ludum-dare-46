@@ -2,7 +2,9 @@
 
 [ext_resource path="res://dialogueBox/dialog_spawner_area.gd" type="Script" id=1]
 
-[node name="dialog_spawner_area" type="Area2D"]
+[node name="dialog_spawner_area" type="Area2D" groups=[
+"dialogSpawner",
+]]
 script = ExtResource( 1 )
 lines = PoolStringArray( "gay", "no u", "hehe" )
 [connection signal="body_entered" from="." to="." method="_on_dialog_spawner_area_body_entered"]

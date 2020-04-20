@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://rooms/okarinRoom/bed.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://rooms/okarinRoom/warderobe.tscn" type="PackedScene" id=5]
 [ext_resource path="res://actionKeyArea/actionKeyArea.tscn" type="PackedScene" id=6]
 [ext_resource path="res://other/table.tscn" type="PackedScene" id=7]
+[ext_resource path="res://dialogueBox/dialog_box.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 52.0959, 30.8951 )
@@ -79,3 +80,6 @@ shape = SubResource( 4 )
 
 [node name="player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 211.11, 278.758 )
+
+[node name="dialog_box" parent="." instance=ExtResource( 8 )]
+lines = PoolStringArray( "phone: 3 new messages", "Finally somebody sent me a message", "Huh, what\'s this\? \"your sim card offer will expire in 2 days...\"", "Oof...", "Huh, what is this. A message from Christina\? From tomorrow\? This is a dmail", "message: \"I was caputred by Sern\"", "Oh, damn, I\'d better call Daru", "(call sound)", "Daru: hello", "Christina was captured!", "What are you doing now\?", "Daru: You know, the usual, just watching some hen.. I mean hacking into north korea.", "Daru: Anyway, what did you say About Kurisu\?", "(explains stuff)", "Ok, then go to the sern office. I\'ll help you out when you get there" )

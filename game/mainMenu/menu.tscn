@@ -1,9 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://mainMenu/menu.gd" type="Script" id=1]
 [ext_resource path="res://mainMenu/ button.tscn" type="PackedScene" id=2]
 [ext_resource path="res://mainMenu/pressedButton.png" type="Texture" id=3]
 [ext_resource path="res://dialogueBox/dialog_box.png" type="Texture" id=4]
+[ext_resource path="res://mainFont.tres" type="DynamicFontData" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 5 )
 
 [node name="menu" type="Node2D"]
 script = ExtResource( 1 )
@@ -38,6 +43,23 @@ __meta__ = {
 [node name="box" type="Sprite" parent="options"]
 scale = Vector2( 2, 3 )
 texture = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="options"]
+margin_left = -218.0
+margin_top = -86.0
+margin_right = 221.0
+margin_bottom = 88.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Move: WASD/ARROWS
+Action Key: E
+Attack: Enter/Left Click
+Skip Dialogue: ESC"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="buttons/Continue" to="." method="_on_Continue_pressed"]
 [connection signal="pressed" from="buttons/NewGame" to="." method="_on_NewGame_pressed"]
 [connection signal="pressed" from="buttons/Options" to="." method="_on_Options_pressed"]

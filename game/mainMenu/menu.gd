@@ -12,15 +12,20 @@ func _process(delta):
 func _on_Continue_pressed():
 	get_tree().change_scene(global.lastRoom)
 	get_tree().paused = false
+	sounds.get_node("pop").play()
 
 
 func _on_NewGame_pressed():
 	get_tree().change_scene("res://rooms/okarinRoom/okarinRoom.tscn")
 	get_tree().paused = false
+	sounds.get_node("pop").play()
+	sounds.get_node("op").play()
 
 func _on_Exit_pressed():
 	get_tree().quit()
+	sounds.get_node("pop").play()
 
 
 func _on_Options_pressed():
 	$options.visible = !$options.visible
+	sounds.get_node("pop").play()

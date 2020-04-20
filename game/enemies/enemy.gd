@@ -6,11 +6,13 @@ var targetPosition : Vector2
 var direction := Vector2()
 var velocity := Vector2()
 export var maxTakenDamage := 20
+export var state := "1"
+export var hasKey = false
 
 export var health = 50
 export var speed = 250
 export var patrolSpeed = 50
-onready var anim = "idle"
+onready var anim = "idle1"
 
 func _physics_process(delta):
 	if shouldUpdateTargetPos:
@@ -25,14 +27,16 @@ func _physics_process(delta):
 		else: velocity = direction * speed
 	else:
 		generateRandomDirection(delta)
+		if get_slide_count() > 0:
+			randomDirectionTimer = 4
 		velocity = randomDir * patrolSpeed
 	
 	move_and_slide(velocity)
 	
 	$body/AnimatedSprite.play(anim)
 	if velocity != Vector2():
-		anim = "move"
-	else: anim = "idle"
+		anim = "move" + state
+	else: anim = "idle" + state
 	
 	if velocity.x < 0:
 		$body.scale.x = -1
@@ -61,6 +65,7 @@ func updateTargetPos(delta):
 
 func takeDamage():
 	randomize()
+	sounds.get_node("hit").play()
 	health -= int(rand_range(1, maxTakenDamage))
 
 onready var alreadyDead = false
@@ -74,6 +79,8 @@ func die():
 		patrolSpeed = 0
 		$AnimationPlayer.play("die")
 		self.z_index = 5
+		if hasKey:
+			spawnKey()
 
 var randomDirectionTimer = 0
 var randomDir = Vector2(0,0)
@@ -90,3 +97,8 @@ func generateRandomDirection(delta):
 
 func attack():
 	$AnimationPlayer.play("attack")
+	sounds.get_node("wosh").play()
+
+func spawnKey():
+	var key = global.KEY.instance()
+	add_child(key)

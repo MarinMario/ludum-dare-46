@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/gateOfSteiner.ogg-315e4961cf523d1c1c7f367f925f2c87.oggstr"
+
+[deps]
+
+source_file="res://sounds/gateOfSteiner.ogg"
+dest_files=[ "res://.import/gateOfSteiner.ogg-315e4961cf523d1c1c7f367f925f2c87.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

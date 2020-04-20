@@ -3,7 +3,7 @@ extends Node2D
 onready var enemy = get_parent().get_parent()
 
 func _process(delta):
-	var state = get_parent().get_parent().name
+	var state = "enemy" + get_parent().get_parent().state
 	$hand.play(state)
 	$hand/sword/sword.play(state)
 
