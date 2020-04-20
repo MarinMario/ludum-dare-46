@@ -16,7 +16,11 @@ _global_script_class_icons={
 [application]
 
 config/name="Ludum Dare 46"
-run/main_scene="res://testWorld.tscn"
+run/main_scene="res://mainMenu/mainMenu.tscn"
+boot_splash/image="res://player/swprd.png"
+boot_splash/fullsize=false
+boot_splash/use_filter=false
+boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://icon.png"
 
 [autoload]
@@ -98,5 +102,5 @@ escape={
 quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
-environment/default_clear_color=Color( 0, 0, 0, 1 )
+environment/default_clear_color=Color( 0.152941, 0.160784, 0.215686, 1 )
 environment/default_environment="res://default_env.tres"

@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://mainMenu/ button.tscn" type="PackedScene" id=1]
+[ext_resource path="res://mainMenu/menu.tscn" type="PackedScene" id=2]
+[ext_resource path="res://mainMenu/inGameMenu.gd" type="Script" id=3]
+
+[sub_resource type="InputEventAction" id=1]
+action = "escape"
+
+[sub_resource type="ShortCut" id=2]
+shortcut = SubResource( 1 )
+
+[node name="inGameMenu" type="CanvasLayer"]
+pause_mode = 2
+layer = 2
+script = ExtResource( 3 )
+
+[node name="pauseMenu" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="pauseMenu"]
+margin_left = -105.287
+margin_top = -79.8339
+margin_right = 1150.71
+margin_bottom = 712.166
+color = Color( 0, 0, 0, 0.784314 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="menu" parent="pauseMenu" instance=ExtResource( 2 )]
+position = Vector2( 85.713, 181.166 )
+
+[node name="PauseButton" type="Node2D" parent="."]
+position = Vector2( 877.163, 2.65002 )
+scale = Vector2( 0.7, 0.7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Pause" parent="PauseButton" instance=ExtResource( 1 )]
+focus_mode = 0
+enabled_focus_mode = 0
+shortcut = SubResource( 2 )
+text_ = "Pause"
+[connection signal="pressed" from="PauseButton/Pause" to="." method="_on_Pause_pressed"]

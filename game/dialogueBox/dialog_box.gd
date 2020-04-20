@@ -26,5 +26,6 @@ func _on_anims_animation_finished(anim_name):
 	if anim_name == "despawn":
 		if get_parent().name == "dialog_spawner_area":
 			get_parent().queue_free()
-		
+		else:
+			get_parent().linesRead = true
 		self.queue_free()

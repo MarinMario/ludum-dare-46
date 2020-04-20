@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://rooms/cityScene/taxi1.png" type="Texture" id=1]
+[ext_resource path="res://rooms/cityScene/taxi2.png" type="Texture" id=2]
+[ext_resource path="res://rooms/cityScene/taxi4.png" type="Texture" id=3]
+[ext_resource path="res://rooms/cityScene/taxi3.png" type="Texture" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": false,
+"name": "idle",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "move",
+"speed": 10.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 30.7201, 3.62768 )
+
+[node name="taxi" type="AnimatedSprite"]
+scale = Vector2( 4, 4 )
+frames = SubResource( 1 )
+animation = "move"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 0.116578, -9.65962 )
+shape = SubResource( 2 )

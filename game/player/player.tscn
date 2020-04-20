@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://player/okarin_move3.png" type="Texture" id=1]
 [ext_resource path="res://player/okarin_move1.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://player/okarin_idle.png" type="Texture" id=6]
 [ext_resource path="res://player/playerHand.tscn" type="PackedScene" id=7]
 [ext_resource path="res://player/playerStats.tscn" type="PackedScene" id=8]
+[ext_resource path="res://mainMenu/inGameMenu.tscn" type="PackedScene" id=9]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -93,3 +94,5 @@ anims/die = SubResource( 3 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+
+[node name="inGameMenu" parent="." instance=ExtResource( 9 )]

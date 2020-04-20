@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://rooms/strangerRoom/strangerRoom.tscn" type="PackedScene" id=1]
+
+[node name="male1Room" type="Node2D"]
+
+[node name="strangerRoom" parent="." instance=ExtResource( 1 )]
+personState = "male1"

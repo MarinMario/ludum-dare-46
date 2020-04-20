@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://rooms/colorTileset.tscn" type="PackedScene" id=1]
+[ext_resource path="res://actionKeyArea/actionKeyArea.tscn" type="PackedScene" id=2]
+[ext_resource path="res://player/player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://other/fridge.tscn" type="PackedScene" id=4]
+[ext_resource path="res://other/table.tscn" type="PackedScene" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 27.1784, 73.2284 )
+
+[node name="okarinKitchen" type="Node2D"]
+
+[node name="colorTileset" parent="." instance=ExtResource( 1 )]
+modulate = Color( 0.470588, 0.384314, 0.188235, 1 )
+tile_data = PoolIntArray( 0, 2, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 0, 6, 2, 0, 7, 2, 0, 8, 2, 0, 65536, 2, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 65544, 2, 0, 131072, 2, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 2, 0, 196608, 2, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 2, 0, 262144, 2, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 2, 0, 327680, 2, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 2, 0, 393216, 2, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 2, 0, 393225, 2, 0, 393226, 2, 0, 393227, 2, 0, 458752, 2, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 1, 0, 458761, 1, 0, 458762, 1, 0, 458763, 2, 0, 524288, 2, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 1, 0, 524297, 1, 0, 524298, 1, 0, 524299, 2, 0, 589824, 2, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 2, 0, 655360, 2, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 2, 0, 720896, 2, 0, 720897, 2, 0, 720898, 2, 0, 720899, 2, 0, 720900, 2, 0, 720901, 2, 0, 720902, 2, 0, 720903, 2, 0, 720904, 2, 0, 720905, 2, 0, 720906, 2, 0, 720907, 2, 0 )
+
+[node name="fridge" parent="." instance=ExtResource( 4 )]
+position = Vector2( 66.4999, 103.55 )
+
+[node name="door" parent="." instance=ExtResource( 2 )]
+position = Vector2( 341.181, 292.072 )
+nextRoom = "res://rooms/okarinRoom/okarinRoom.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door"]
+shape = SubResource( 1 )
+
+[node name="player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 155.083, 225.822 )
+
+[node name="table" parent="." instance=ExtResource( 5 )]
+position = Vector2( 181.895, 115.413 )

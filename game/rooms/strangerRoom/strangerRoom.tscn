@@ -1,0 +1,91 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://civilians/stranger.tscn" type="PackedScene" id=1]
+[ext_resource path="res://rooms/colorTileset.tscn" type="PackedScene" id=2]
+[ext_resource path="res://rooms/okarinRoom/warderobe.tscn" type="PackedScene" id=3]
+[ext_resource path="res://rooms/okarinRoom/bed.tscn" type="PackedScene" id=4]
+[ext_resource path="res://rooms/door.tscn" type="PackedScene" id=5]
+[ext_resource path="res://rooms/strangerRoom/strangerRoom.gd" type="Script" id=6]
+[ext_resource path="res://actionKeyArea/actionKeyArea.tscn" type="PackedScene" id=7]
+[ext_resource path="res://dialogueBox/dialog_spawner_area.tscn" type="PackedScene" id=8]
+[ext_resource path="res://player/player.tscn" type="PackedScene" id=9]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 35.1508, 59.5366 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 6.43695, 6.52122 )
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 66.8308
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 28.3423
+
+[node name="strangerRoom" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="colorTileset" parent="." instance=ExtResource( 2 )]
+modulate = Color( 0.670588, 0.372549, 0.372549, 1 )
+tile_data = PoolIntArray( -65536, 2, 0, -65535, 2, 0, -65534, 2, 0, -65533, 2, 0, -65532, 2, 0, -65531, 2, 0, -65530, 2, 0, -65529, 2, 0, -65528, 2, 0, -65527, 2, 0, -65526, 2, 0, -65525, 2, 0, 0, 2, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 10, 1, 0, 11, 2, 0, 65536, 2, 0, 65537, 1, 0, 65538, 1, 0, 65539, 1, 0, 65540, 1, 0, 65541, 1, 0, 65542, 1, 0, 65543, 1, 0, 65544, 1, 0, 65545, 1, 0, 65546, 1, 0, 65547, 2, 0, 131072, 2, 0, 131073, 1, 0, 131074, 1, 0, 131075, 1, 0, 131076, 1, 0, 131077, 1, 0, 131078, 1, 0, 131079, 1, 0, 131080, 1, 0, 131081, 1, 0, 131082, 1, 0, 131083, 2, 0, 196608, 2, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 2, 0, 262144, 2, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 262153, 0, 0, 262154, 0, 0, 262155, 2, 0, 327680, 2, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 2, 0, 393216, 2, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 2, 0, 458752, 2, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 2, 0, 524288, 2, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 524299, 2, 0, 589824, 2, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 2, 0, 655360, 2, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 2, 0, 720896, 2, 0, 720897, 2, 0, 720898, 2, 0, 720899, 2, 0, 720900, 2, 0, 720901, 0, 0, 720902, 0, 0, 720903, 2, 0, 720904, 2, 0, 720905, 2, 0, 720906, 2, 0, 720907, 2, 0, 786436, 2, 0, 786437, 0, 0, 786438, 0, 0, 786439, 2, 0, 851972, 2, 0, 851973, 0, 0, 851974, 0, 0, 851975, 2, 0, 917508, 2, 0, 917509, 1, 0, 917510, 1, 0, 917511, 2, 0, 983044, 2, 0, 983045, 2, 0, 983046, 2, 0, 983047, 2, 0 )
+
+[node name="warderobe" parent="." instance=ExtResource( 3 )]
+position = Vector2( 300.796, 103.13 )
+
+[node name="bed" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.74902, 0.478431, 0.282353, 1 )
+position = Vector2( 79.0363, 158.66 )
+
+[node name="door" parent="." instance=ExtResource( 5 )]
+position = Vector2( 189.948, 51.6771 )
+scale = Vector2( 0.7, 0.7 )
+
+[node name="actionKeyArea2" parent="door" instance=ExtResource( 7 )]
+lines = PoolStringArray( "Stranger: I said get out of my house" )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door/actionKeyArea2"]
+position = Vector2( -0.947754, -0.947723 )
+shape = SubResource( 3 )
+
+[node name="stranger" parent="." instance=ExtResource( 1 )]
+position = Vector2( 164.989, 146.778 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="stranger"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="stranger/StaticBody2D"]
+position = Vector2( 0, -13.5504 )
+shape = SubResource( 1 )
+
+[node name="outside" parent="." instance=ExtResource( 7 )]
+nextRoom = "res://rooms/house/house.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="outside"]
+position = Vector2( 194.781, 489.869 )
+shape = SubResource( 2 )
+
+[node name="outDialog" parent="." instance=ExtResource( 8 )]
+position = Vector2( 247.471, 249.961 )
+lines = PoolStringArray( "Stranger: What are you doing here\? Get out!" )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="outDialog"]
+position = Vector2( -54.8186, 74.6466 )
+shape = SubResource( 4 )
+
+[node name="outDialog2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 247.471, 249.961 )
+lines = PoolStringArray( "Stranger: Don\'t touch that!" )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="outDialog2"]
+position = Vector2( 58.3177, -103.805 )
+shape = SubResource( 4 )
+
+[node name="outDialog3" parent="." instance=ExtResource( 8 )]
+position = Vector2( 247.471, 249.961 )
+lines = PoolStringArray( "Stranger: Keep your hands off my bed!" )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="outDialog3"]
+position = Vector2( -169.121, -81.6448 )
+shape = SubResource( 4 )
+
+[node name="player" parent="." instance=ExtResource( 9 )]
+position = Vector2( 192.854, 411.033 )
