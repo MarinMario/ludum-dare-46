@@ -21,6 +21,8 @@ func _on_NewGame_pressed():
 	sounds.get_node("gos").stop()
 	sounds.get_node("pop").play()
 	sounds.get_node("op").play()
+	global.timer = 0
+	global.startTimer = true
 
 func _on_Exit_pressed():
 	get_tree().quit()

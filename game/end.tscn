@@ -54,4 +54,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="timer" type="Label" parent="."]
+margin_left = -2.0
+margin_right = 1023.0
+margin_bottom = 174.0
+custom_fonts/font = SubResource( 2 )
+text = "maoitsme.itch.io"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="inGameMenu" parent="." instance=ExtResource( 2 )]

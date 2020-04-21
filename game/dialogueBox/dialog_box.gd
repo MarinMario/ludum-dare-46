@@ -19,7 +19,7 @@ func _process(delta):
 			$anims.play("pop")
 			sounds.get_node("pop").play()
 	
-	if Input.is_action_just_pressed("escape"):
+	if Input.is_action_just_pressed("escape") or Input.is_mouse_button_pressed(2):
 		$anims.play("despawn")
 		sounds.get_node("pop").play()
 	

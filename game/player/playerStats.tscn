@@ -1,13 +1,18 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://player/playerStats.gd" type="Script" id=1]
 [ext_resource path="res://enemies/enemy1/health_bar.png" type="Texture" id=2]
+[ext_resource path="res://mainFont.tres" type="DynamicFontData" id=3]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.847059, 0.568627, 0.137255, 1 )
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 20
+font_data = ExtResource( 3 )
 
 [node name="playerStats" type="CanvasLayer"]
 script = ExtResource( 1 )
@@ -34,3 +39,16 @@ __meta__ = {
 position = Vector2( 70, 16 )
 scale = Vector2( 5, 5 )
 texture = ExtResource( 2 )
+
+[node name="timer" type="Label" parent="."]
+margin_left = 184.0
+margin_top = 10.0
+margin_right = 344.0
+margin_bottom = 54.0
+custom_fonts/font = SubResource( 3 )
+text = "00:00"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

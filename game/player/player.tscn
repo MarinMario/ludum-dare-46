@@ -27,7 +27,7 @@ animations = [ {
 radius = 11.7462
 height = 84.3793
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 resource_name = "attack"
 length = 0.3
 tracks/0/type = "value"
@@ -43,8 +43,7 @@ tracks/0/keys = {
 "values": [ 100.0, 460.0 ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "die"
+[sub_resource type="Animation" id=4]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("body:rotation_degrees")
@@ -104,8 +103,8 @@ animation = "move"
 shape = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/attack = SubResource( 4 )
-anims/die = SubResource( 3 )
+anims/attack = SubResource( 3 )
+anims/die = SubResource( 4 )
 
 [node name="playerStats" parent="." instance=ExtResource( 8 )]
 
