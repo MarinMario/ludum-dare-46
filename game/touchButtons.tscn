@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://touchButton.png" type="Texture" id=1]
+[ext_resource path="res://touchButtonpressed.png" type="Texture" id=2]
+[ext_resource path="res://epressed.png" type="Texture" id=3]
+[ext_resource path="res://etouch.png" type="Texture" id=4]
+
+[node name="touchButtons" type="CanvasLayer"]
+
+[node name="buttons" type="Node2D" parent="."]
+position = Vector2( 24.8621, 481.51 )
+scale = Vector2( 2, 2 )
+
+[node name="left" type="TouchScreenButton" parent="buttons"]
+normal = ExtResource( 1 )
+pressed = ExtResource( 2 )
+passby_press = true
+action = "ui_left"
+visibility_mode = 1
+
+[node name="right" type="TouchScreenButton" parent="buttons"]
+position = Vector2( 80, 0 )
+normal = ExtResource( 1 )
+pressed = ExtResource( 2 )
+passby_press = true
+action = "ui_right"
+visibility_mode = 1
+
+[node name="up" type="TouchScreenButton" parent="buttons"]
+position = Vector2( 40, -20 )
+normal = ExtResource( 1 )
+pressed = ExtResource( 2 )
+passby_press = true
+action = "ui_up"
+visibility_mode = 1
+
+[node name="down" type="TouchScreenButton" parent="buttons"]
+position = Vector2( 40, 20 )
+normal = ExtResource( 1 )
+pressed = ExtResource( 2 )
+passby_press = true
+action = "ui_down"
+visibility_mode = 1
+
+[node name="attack" type="TouchScreenButton" parent="buttons"]
+position = Vector2( 432.606, -1.86606 )
+scale = Vector2( 1, 1 )
+normal = ExtResource( 1 )
+pressed = ExtResource( 2 )
+passby_press = true
+action = "attack"
+visibility_mode = 1
+
+[node name="action" type="TouchScreenButton" parent="buttons"]
+position = Vector2( 385.676, -1.41483 )
+scale = Vector2( 1, 1 )
+normal = ExtResource( 4 )
+pressed = ExtResource( 3 )
+passby_press = true
+action = "action_key"
+visibility_mode = 1

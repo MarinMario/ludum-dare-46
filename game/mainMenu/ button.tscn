@@ -12,6 +12,9 @@ font_data = ExtResource( 4 )
 [node name="button" type="TextureButton"]
 margin_right = 200.0
 margin_bottom = 80.0
+focus_mode = 0
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 1 )
 texture_hover = ExtResource( 3 )
